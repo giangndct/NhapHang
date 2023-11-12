@@ -12,11 +12,11 @@ import java.sql.SQLException;
  *
  * @author Admin
  */
-public class DBContext {
+public class DAO {
 
     protected Connection connection;
 
-    public DBContext() {
+    public DAO() {
         try {
 
             String url = "jdbc:mysql://" + serverName + ":" + portNumber + "/" + dbName;

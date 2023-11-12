@@ -4,8 +4,8 @@
  */
 package DAO;
 
-import Entity.ImportInvoice;
-import Entity.ImportInvoiceAccessary;
+import Entity.ImportInvoice205;
+import Entity.ImportInvoiceAccessary205;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,13 +17,13 @@ import java.util.Date;
  *
  * @author Admin
  */
-public class ImportInvoiceDAO extends DBContext {
+public class ImportInvoiceDAO205 extends DAO {
 
-    public ImportInvoiceDAO() {
+    public ImportInvoiceDAO205() {
         super();
     }
 
-    public boolean addImportInvoice(ImportInvoice importInvoice) {
+    public boolean addImportInvoice(ImportInvoice205 importInvoice) {
         String sqlAddImportInvoice = "INSERT INTO tblimportinvoice205 (createdDate,totalMoney, tblUserId, tblSupplierId) VALUES(?,?,?,?);";
         String sqlAddImportInvoiceAccessary = "INSERT INTO tblimportinvoiceaccessary205 (amount, price, tblImportInvoice205, tblAccessary205) VALUES(?,?,?,?);";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -43,7 +43,7 @@ public class ImportInvoiceDAO extends DBContext {
             if (generatedKeys.next()) {
                 importInvoice.setId(generatedKeys.getInt(1));
                
-                for (ImportInvoiceAccessary br : importInvoice.getListAccessarys()) {
+                for (ImportInvoiceAccessary205 br : importInvoice.getListAccessarys()) {
                     ps
                             = connection.prepareStatement(sqlAddImportInvoiceAccessary,
                                     Statement.RETURN_GENERATED_KEYS);

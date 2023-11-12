@@ -4,8 +4,8 @@
  */
 package Controller;
 
-import DAO.UserDAO;
-import Entity.User;
+import DAO.UserDAO205;
+import Entity.User205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -74,8 +74,8 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UserDAO uDAO = new UserDAO();
-        User user = new User();
+        UserDAO205 uDAO = new UserDAO205();
+        User205 user = new User205();
         user.setUsername(request.getParameter("username"));
         user.setPassword(request.getParameter("password"));
         String err = "";

@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import Entity.Service;
+import Entity.Service205;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -13,20 +13,20 @@ import java.util.ArrayList;
  *
  * @author Admin
  */
-public class ServiceDAO extends DBContext {
+public class ServiceDAO205 extends DAO {
     
-    public ServiceDAO() {
+    public ServiceDAO205() {
     }
 
-    public ArrayList<Service> findServiceByName(String key) {
-        ArrayList<Service> result = new ArrayList<>();
+    public ArrayList<Service205> findServiceByName(String key) {
+        ArrayList<Service205> result = new ArrayList<>();
         String sql = "SELECT * FROM tblservice205 WHERE name LIKE ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "%" + key + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Service service = new Service();
+                Service205 service = new Service205();
                 service.setId(rs.getInt("id"));
                 service.setName(rs.getString("name"));
                 service.setDescription("description");
@@ -38,15 +38,15 @@ public class ServiceDAO extends DBContext {
         System.out.println("find:" + result.size());
         return result;
     }
-    public Service getService(int id) {
-        Service result = new Service();
+    public Service205 getService(int id) {
+        Service205 result = new Service205();
         String sql = "SELECT * FROM tblservice205 WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                Service service = new Service();
+                Service205 service = new Service205();
                 service.setId(rs.getInt("id"));
                 service.setName(rs.getString("name"));
                 service.setDescription(rs.getString("description"));

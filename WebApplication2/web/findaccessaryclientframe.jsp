@@ -3,8 +3,8 @@
     Created on : 01-11-2023, 07:49:16
     Author     : Admin
 --%>
-<%@page import="Entity.Accessary"%>
-<%@page import="Entity.Service"%>
+<%@page import="Entity.Accessary205"%>
+<%@page import="Entity.Service205"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -17,6 +17,7 @@
     </head>
     <body>
     <body>
+        <h1>Tìm kiếm dịch vụ/phụ tùng</h1>
         <p>Nhập tên</p>
         <form action="findclient">
             <div class="form-control" style="border: 0px">

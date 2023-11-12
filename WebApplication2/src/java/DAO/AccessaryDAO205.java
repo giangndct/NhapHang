@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import Entity.Accessary;
+import Entity.Accessary205;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -14,21 +14,21 @@ import java.util.ArrayList;
  *
  * @author Admin
  */
-public class AccessaryDAO extends DBContext {
+public class AccessaryDAO205 extends DAO {
 
-    public AccessaryDAO() {
+    public AccessaryDAO205() {
         super();
     }
 
-    public ArrayList<Accessary> findPartByName(String key) {
-        ArrayList<Accessary> result = new ArrayList<>();
+    public ArrayList<Accessary205> findAccessaryByName(String key) {
+        ArrayList<Accessary205> result = new ArrayList<>();
         String sql = "SELECT * FROM tblaccessary205 WHERE name LIKE ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "%" + key + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Accessary accessary = new Accessary();
+                Accessary205 accessary = new Accessary205();
                 accessary.setId(rs.getInt("id"));
                 accessary.setName(rs.getString("name"));
                 accessary.setCompany(rs.getString("company"));
@@ -44,15 +44,15 @@ public class AccessaryDAO extends DBContext {
         return result;
     }
 
-    public Accessary getAccessary(int id) {
-        Accessary result = new Accessary();
+    public Accessary205 getAccessary(int id) {
+        Accessary205 result = new Accessary205();
         String sql = "SELECT * FROM tblaccessary205 WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                Accessary accessary = new Accessary();
+                Accessary205 accessary = new Accessary205();
                 accessary.setId(rs.getInt("id"));
                 accessary.setName(rs.getString("name"));
                 accessary.setCompany(rs.getString("company"));
@@ -66,7 +66,7 @@ public class AccessaryDAO extends DBContext {
         return result;
     }
 
-    public boolean addAccessary(Accessary accessary) {
+    public boolean addAccessary(Accessary205 accessary) {
         String sql = "INSERT INTO tblaccessary205(name, company, description, price ) VALUES( ?,  ?,  ?,?) ";
         try {
             PreparedStatement ps

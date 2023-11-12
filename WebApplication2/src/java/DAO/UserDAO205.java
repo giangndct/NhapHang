@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import Entity.User;
+import Entity.User205;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
@@ -12,10 +12,10 @@ import java.sql.ResultSet;
  *
  * @author Admin
  */
-public class UserDAO extends DBContext {
+public class UserDAO205 extends DAO {
 
 
-    public boolean checkUser(User user) {
+    public boolean checkUser(User205 user) {
         boolean result = false;
         String sql = "SELECT * FROM tbluser205 WHERE username = ? AND password = ?";
         try {
@@ -33,7 +33,7 @@ public class UserDAO extends DBContext {
 
     }
 
-    public User getUser(User user) {
+    public User205 getUser(User205 user) {
         String sql = "SELECT * FROM tbluser205 WHERE username = ? AND password = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);

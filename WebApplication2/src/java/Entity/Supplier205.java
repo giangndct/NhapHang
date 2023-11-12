@@ -10,14 +10,14 @@ import java.io.Serializable;
  *
  * @author Admin
  */
-public class Supplier{
+public class Supplier205{
     private int id;
     private String name,address,phone,bankAccount;
 
-    public Supplier() {
+    public Supplier205() {
     }
 
-    public Supplier(int id, String name, String address, String phone, String bankAccount) {
+    public Supplier205(int id, String name, String address, String phone, String bankAccount) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -25,7 +25,7 @@ public class Supplier{
         this.bankAccount = bankAccount;
     }
 
-    public Supplier(String name, String address, String phone,String bankAccount) {
+    public Supplier205(String name, String address, String phone,String bankAccount) {
         this.name = name;
         this.address = address;
         this.phone = phone;

@@ -27,5 +27,5 @@
             <button type="submit">Thêm</button>
         </form>
     </body>
-    <div style="color: red">${requestScope.err}</div
+    <div style="color: red">${requestScope.err}</div>
 </html>

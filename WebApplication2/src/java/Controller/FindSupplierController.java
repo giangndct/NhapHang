@@ -4,8 +4,8 @@
  */
 package Controller;
 
-import DAO.SupplierDAO;
-import Entity.Supplier;
+import DAO.SupplierDAO205;
+import Entity.Supplier205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -58,9 +58,9 @@ public class FindSupplierController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        SupplierDAO sDAO = new SupplierDAO();
+        SupplierDAO205 sDAO = new SupplierDAO205();
         String key = request.getParameter("supplier");
-        ArrayList<Supplier> listSupplier = sDAO.findSupplierByName(key);
+        ArrayList<Supplier205> listSupplier = sDAO.findSupplierByName(key);
         request.setAttribute("listSupplier", listSupplier);
         request.getRequestDispatcher("findsupplierframe.jsp").forward(request, response);
 

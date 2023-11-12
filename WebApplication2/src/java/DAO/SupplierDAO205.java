@@ -4,7 +4,7 @@
  */
 package DAO;
 
-import Entity.Supplier;
+import Entity.Supplier205;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,19 +15,19 @@ import java.util.ArrayList;
  *
  * @author Admin
  */
-public class SupplierDAO extends DBContext {
+public class SupplierDAO205 extends DAO {
 
 
 
-    public ArrayList<Supplier> findSupplierByName(String key) {
-        ArrayList<Supplier> result = new ArrayList<>();
+    public ArrayList<Supplier205> findSupplierByName(String key) {
+        ArrayList<Supplier205> result = new ArrayList<>();
         String sql = "SELECT * FROM tblsupplier205 WHERE name LIKE ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "%" + key + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Supplier supplier = new Supplier();
+                Supplier205 supplier = new Supplier205();
                 supplier.setId(rs.getInt("id"));
                 supplier.setName(rs.getString("name"));
                 supplier.setPhone(rs.getString("phone"));
@@ -41,15 +41,15 @@ public class SupplierDAO extends DBContext {
         return result;
     }
 
-    public Supplier getSupplier(int id) {
-        Supplier result = new Supplier();
+    public Supplier205 getSupplier(int id) {
+        Supplier205 result = new Supplier205();
         String sql = "SELECT * FROM tblsupplier205  WHERE id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                Supplier supplier = new Supplier();
+                Supplier205 supplier = new Supplier205();
                 supplier.setId(rs.getInt("id"));
                 supplier.setName(rs.getString("name"));
                 supplier.setPhone(rs.getString("phone"));
@@ -64,7 +64,7 @@ public class SupplierDAO extends DBContext {
 
     }
 
-    public boolean addSupplier(Supplier supplier) {
+    public boolean addSupplier(Supplier205 supplier) {
         String sql = "INSERT INTO tblsupplier205 (name,address, phone,bankAccount) VALUES(?, ?, ?, ?)";
         try {
             PreparedStatement ps

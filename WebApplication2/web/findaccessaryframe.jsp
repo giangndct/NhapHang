@@ -16,10 +16,10 @@
 
     </head>
     <body>
-        <h1>Tìm phụ tùng</h1>
+        <h1>Tìm phụ tùng để nhập</h1>
         <form action="findacc">
             <div class="form-control" style="border: 0px">
-                <input type="text" name="accessary"/>
+                Nhập tên: <input type="text" name="accessary"/>
                 <button type="submit" class="btn btn-primary">Tìm</button>
                 <a href="addaccessaryframe.jsp"
                    class="btn btn-primary">Thêm mới phụ tùng</a>

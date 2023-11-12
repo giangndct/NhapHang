@@ -4,14 +4,14 @@
  */
 package Controller;
 
-import DAO.AccessaryDAO;
-import DAO.ImportInvoiceDAO;
-import DAO.SupplierDAO;
-import Entity.Accessary;
-import Entity.ImportInvoice;
-import Entity.ImportInvoiceAccessary;
-import Entity.Supplier;
-import Entity.User;
+import DAO.AccessaryDAO205;
+import DAO.ImportInvoiceDAO205;
+import DAO.SupplierDAO205;
+import Entity.Accessary205;
+import Entity.ImportInvoice205;
+import Entity.ImportInvoiceAccessary205;
+import Entity.Supplier205;
+import Entity.User205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -69,17 +69,17 @@ public class ImportInvoiceController extends HttpServlet {
         String accessaryid = request.getParameter("accessaryid");
         HttpSession session = request.getSession();
         if (supplierid != null) {
-            SupplierDAO spDAO = new SupplierDAO();
-            ImportInvoice invoice = new ImportInvoice();
+            SupplierDAO205 spDAO = new SupplierDAO205();
+            ImportInvoice205 invoice = new ImportInvoice205();
             try {
-                Supplier sp = spDAO.getSupplier(Integer.parseInt(supplierid));
+                Supplier205 sp = spDAO.getSupplier(Integer.parseInt(supplierid));
                 invoice.setSupplier(sp);
             } catch (Exception ex) {
                 String err = "Có lỗi xảy ra khi tìm nhà cung cấp";
                 request.setAttribute("err", err);
                 request.getRequestDispatcher("findsupplierframe.jsp").forward(request, response);
             }
-            User u = (User) session.getAttribute("user");
+            User205 u = (User205) session.getAttribute("user");
             invoice.setUser(u);
             session.setAttribute("invoice", invoice);
         } else if (accessaryid != null) {
@@ -88,13 +88,13 @@ public class ImportInvoiceController extends HttpServlet {
                         = Integer.parseInt(request.getParameter("amount"));
                 int dongia
                         = Integer.parseInt(request.getParameter("price"));
-                AccessaryDAO aDAO = new AccessaryDAO();
-                Accessary p = aDAO.getAccessary(Integer.parseInt(accessaryid));
-                ImportInvoiceAccessary pii = new ImportInvoiceAccessary();
+                AccessaryDAO205 aDAO = new AccessaryDAO205();
+                Accessary205 p = aDAO.getAccessary(Integer.parseInt(accessaryid));
+                ImportInvoiceAccessary205 pii = new ImportInvoiceAccessary205();
                 pii.setAccessary(p);
                 pii.setAmount(soLuong);
                 pii.setPrice(dongia);
-                ImportInvoice invoice = (ImportInvoice) session.getAttribute("invoice");
+                ImportInvoice205 invoice = (ImportInvoice205) session.getAttribute("invoice");
                 invoice.getListAccessarys().add(pii);
                 invoice.setTotalMoney(invoice.getTotalMoney()
                         + soLuong * dongia);
@@ -120,8 +120,8 @@ public class ImportInvoiceController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        ImportInvoice invoice = (ImportInvoice) session.getAttribute("invoice");
-        ImportInvoiceDAO pDAO = new ImportInvoiceDAO();
+        ImportInvoice205 invoice = (ImportInvoice205) session.getAttribute("invoice");
+        ImportInvoiceDAO205 pDAO = new ImportInvoiceDAO205();
         if (pDAO.addImportInvoice(invoice)) {
             String message = "Lưu hoá đơn nhập thành công";
             request.setAttribute("message", message);

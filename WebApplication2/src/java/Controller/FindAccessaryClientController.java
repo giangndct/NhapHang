@@ -4,11 +4,11 @@ package Controller;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-import DAO.AccessaryDAO;
-import DAO.ServiceDAO;
+import DAO.AccessaryDAO205;
+import DAO.ServiceDAO205;
 
-import Entity.Accessary;
-import Entity.Service;
+import Entity.Accessary205;
+import Entity.Service205;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -64,11 +64,11 @@ public class FindAccessaryClientController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String key = request.getParameter("accessary");
-        AccessaryDAO aDAO = new AccessaryDAO();
-        ArrayList<Accessary> listAcc = aDAO.findPartByName(key);
+        AccessaryDAO205 aDAO = new AccessaryDAO205();
+        ArrayList<Accessary205> listAcc = aDAO.findAccessaryByName(key);
         request.setAttribute("listAcc", listAcc);
-        ServiceDAO sDAO = new ServiceDAO();
-        ArrayList<Service> listService = sDAO.findServiceByName(key);
+        ServiceDAO205 sDAO = new ServiceDAO205();
+        ArrayList<Service205> listService = sDAO.findServiceByName(key);
         request.setAttribute("listService", listService);
         request.getRequestDispatcher("findaccessaryclientframe.jsp").forward(request, response);
     }

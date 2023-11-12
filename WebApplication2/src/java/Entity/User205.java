@@ -10,15 +10,15 @@ import java.io.Serializable;
  *
  * @author Admin
  */
-public class User  {
+public class User205  {
 
     private int id;
     private String name, username, password, role;
 
-    public User() {
+    public User205() {
     }
 
-    public User(int id, String name, String username, String password, String role) {
+    public User205(int id, String name, String username, String password, String role) {
         this.id = id;
         this.name = name;
         this.username = username;
@@ -26,12 +26,12 @@ public class User  {
         this.role = role;
     }
     
-     public User(String username, String password) {
+     public User205(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
-    public User(User u) {
+    public User205(User205 u) {
         this.id = u.id;
         this.name = u.name;
         this.username = u.username;

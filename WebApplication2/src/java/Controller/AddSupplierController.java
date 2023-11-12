@@ -4,8 +4,8 @@
  */
 package Controller;
 
-import DAO.SupplierDAO;
-import Entity.Supplier;
+import DAO.SupplierDAO205;
+import Entity.Supplier205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -77,14 +77,14 @@ public class AddSupplierController extends HttpServlet {
         String address=request.getParameter("address");
         String phone=request.getParameter("phone");
         String bank=request.getParameter("bank");
-        Supplier supplier = new Supplier(name, address, phone, bank);
+        Supplier205 supplier = new Supplier205(name, address, phone, bank);
     
         if (supplier.getName().equalsIgnoreCase("")) {
             String err = "Không thể thiếu trường tên";
             request.setAttribute("err", err);
             request.getRequestDispatcher("addsupplierframe.jsp").forward(request, response);
         } else {
-            SupplierDAO sDAO = new SupplierDAO();
+            SupplierDAO205 sDAO = new SupplierDAO205();
             if (sDAO.addSupplier(supplier)) {
                 request.getRequestDispatcher("findsupplierframe.jsp").forward(request, response);
             } else {

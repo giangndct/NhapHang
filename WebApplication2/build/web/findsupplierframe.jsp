@@ -3,7 +3,7 @@
     Created on : 30-10-2023, 23:21:43
     Author     : Admin
 --%>
-<%@page import="Entity.Supplier"%>
+<%@page import="Entity.Supplier205"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -20,7 +20,7 @@
         <h1>Tìm nhà cung cấp</h1>
         <form action="findsup">
             <div class="form-control" style="border: 0px" >
-                <input type="text" name="supplier" />
+                Nhập tên: <input type="text" name="supplier" />
                 <button type="submit" class="btn btn-primary">Tìm</button>
                 <a 
                     href="addsupplierframe.jsp" class="btn btn-primary">Thêm nhà cung cấp</a>

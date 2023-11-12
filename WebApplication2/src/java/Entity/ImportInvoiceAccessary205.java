@@ -10,29 +10,29 @@ import java.io.Serializable;
  *
  * @author Admin
  */
-public class ImportInvoiceAccessary {
+public class ImportInvoiceAccessary205 {
 
     private int id, amount;
     private float price;
-    private Accessary accessary;
+    private Accessary205 accessary;
 
-    public ImportInvoiceAccessary() {
+    public ImportInvoiceAccessary205() {
     }
 
-    public ImportInvoiceAccessary(int id, int amount, float price, Accessary accessary) {
+    public ImportInvoiceAccessary205(int id, int amount, float price, Accessary205 accessary) {
         this.id = id;
         this.amount = amount;
         this.price = price;
         this.accessary = accessary;
     }
 
-    public ImportInvoiceAccessary(int amount, float price, Accessary accessary) {
+    public ImportInvoiceAccessary205(int amount, float price, Accessary205 accessary) {
         this.amount = amount;
         this.price = price;
         this.accessary = accessary;
     }
 
-    public ImportInvoiceAccessary(int amount, float price) {
+    public ImportInvoiceAccessary205(int amount, float price) {
         this.amount = amount;
         this.price = price;
     }
@@ -63,11 +63,11 @@ public class ImportInvoiceAccessary {
         this.price = price;
     }
 
-    public Accessary getAccessary() {
+    public Accessary205 getAccessary() {
         return accessary;
     }
 
-    public void setAccessary(Accessary accessary) {
+    public void setAccessary(Accessary205 accessary) {
         this.accessary = accessary;
     }
     

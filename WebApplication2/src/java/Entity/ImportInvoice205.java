@@ -12,21 +12,21 @@ import java.util.Date;
  *
  * @author Admin
  */
-public class ImportInvoice{
+public class ImportInvoice205{
     private int id;
     private Date createdDate;
     private double totalMoney;
-    private Supplier supplier;
-    private User user;
-    private ArrayList<ImportInvoiceAccessary> listAccessarys;
+    private Supplier205 supplier;
+    private User205 user;
+    private ArrayList<ImportInvoiceAccessary205> listAccessarys;
 
-    public ImportInvoice() {
-        this.supplier = new Supplier();
-        this.user = new User();
+    public ImportInvoice205() {
+        this.supplier = new Supplier205();
+        this.user = new User205();
         this.listAccessarys = new ArrayList<>();
     }
 
-    public ImportInvoice(int id, Date createdDate, double totalMoney, Supplier supplier, User user, ArrayList<ImportInvoiceAccessary> listAccessarys) {
+    public ImportInvoice205(int id, Date createdDate, double totalMoney, Supplier205 supplier, User205 user, ArrayList<ImportInvoiceAccessary205> listAccessarys) {
         this.id = id;
         this.createdDate = createdDate;
         this.totalMoney = totalMoney;
@@ -62,27 +62,27 @@ public class ImportInvoice{
     }
 
 
-    public Supplier getSupplier() {
+    public Supplier205 getSupplier() {
         return supplier;
     }
 
-    public void setSupplier(Supplier supplier) {
+    public void setSupplier(Supplier205 supplier) {
         this.supplier = supplier;
     }
 
-    public User getUser() {
+    public User205 getUser() {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(User205 user) {
         this.user = user;
     }
 
-    public ArrayList<ImportInvoiceAccessary> getListAccessarys() {
+    public ArrayList<ImportInvoiceAccessary205> getListAccessarys() {
         return listAccessarys;
     }
 
-    public void setListAccessarys(ArrayList<ImportInvoiceAccessary> listAccessarys) {
+    public void setListAccessarys(ArrayList<ImportInvoiceAccessary205> listAccessarys) {
         this.listAccessarys = listAccessarys;
     }
     

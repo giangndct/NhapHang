@@ -4,8 +4,8 @@
  */
 package Controller;
 
-import DAO.AccessaryDAO;
-import Entity.Accessary;
+import DAO.AccessaryDAO205;
+import Entity.Accessary205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -63,8 +63,8 @@ public class FindAccessaryController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String key = request.getParameter("accessary");
-        AccessaryDAO aDAO = new AccessaryDAO();
-        ArrayList<Accessary> listAcc = aDAO.findPartByName(key);
+        AccessaryDAO205 aDAO = new AccessaryDAO205();
+        ArrayList<Accessary205> listAcc = aDAO.findAccessaryByName(key);
         request.setAttribute("listAcc", listAcc);
         request.getRequestDispatcher("findaccessaryframe.jsp").forward(request, response);
     }

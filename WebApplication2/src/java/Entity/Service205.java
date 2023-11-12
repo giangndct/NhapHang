@@ -8,14 +8,14 @@ package Entity;
  *
  * @author Admin
  */
-public class Service {
+public class Service205 {
     private int id;
     private String name,description;
 
-    public Service() {
+    public Service205() {
     }
 
-    public Service(int id, String name, String description) {
+    public Service205(int id, String name, String description) {
         this.id = id;
         this.name = name;
         this.description = description;

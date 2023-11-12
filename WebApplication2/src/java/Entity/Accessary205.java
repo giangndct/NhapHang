@@ -10,16 +10,16 @@ import java.io.Serializable;
  *
  * @author Admin
  */
-public class Accessary implements Serializable {
+public class Accessary205 implements Serializable {
 
     int id ;
     String name, company, description;
     float price;
 
-    public Accessary() {
+    public Accessary205() {
     }
 
-    public Accessary(int id, String name, String company, String description, float price) {
+    public Accessary205(int id, String name, String company, String description, float price) {
         this.id = id;
         this.name = name;
         this.company = company;

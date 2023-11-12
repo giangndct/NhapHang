@@ -4,8 +4,8 @@
  */
 package Controller;
 
-import DAO.AccessaryDAO;
-import Entity.Accessary;
+import DAO.AccessaryDAO205;
+import Entity.Accessary205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -72,7 +72,7 @@ public class AddAccessaryController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Accessary accessary = new Accessary();
+        Accessary205 accessary = new Accessary205();
         accessary.setName(request.getParameter("name"));
         accessary.setCompany(request.getParameter("company"));
         accessary.setDescription(request.getParameter("description"));
@@ -85,7 +85,7 @@ public class AddAccessaryController extends HttpServlet {
                 request.getRequestDispatcher("addaccessaryframe.jsp").forward(request, response);
             }
             accessary.setPrice((float) price);
-            AccessaryDAO aDAO = new AccessaryDAO();
+            AccessaryDAO205 aDAO = new AccessaryDAO205();
 
             if (aDAO.addAccessary(accessary)) {
                 request.getRequestDispatcher("findaccessaryframe.jsp").forward(request, response);

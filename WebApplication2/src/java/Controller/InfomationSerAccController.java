@@ -4,11 +4,11 @@
  */
 package Controller;
 
-import DAO.AccessaryDAO;
-import DAO.ServiceDAO;
-import Entity.Accessary;
-import Entity.Service;
-import Entity.User;
+import DAO.AccessaryDAO205;
+import DAO.ServiceDAO205;
+import Entity.Accessary205;
+import Entity.Service205;
+import Entity.User205;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -23,7 +23,7 @@ import java.io.PrintWriter;
  * @author Admin
  */
 @WebServlet(name = "InfomationSerAcc", urlPatterns = {"/info"})
-public class InfomationSerAcc extends HttpServlet {
+public class InfomationSerAccController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +42,10 @@ public class InfomationSerAcc extends HttpServlet {
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet InfomationSerAcc</title>");            
+//            out.println("<title>Servlet InfomationSerAccController</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet InfomationSerAcc at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet InfomationSerAccController at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
 //        }
@@ -66,9 +66,9 @@ public class InfomationSerAcc extends HttpServlet {
         String accessaryid = request.getParameter("accessaryid");
         HttpSession session = request.getSession();
         if (serviceid != null) {
-            ServiceDAO spDAO = new ServiceDAO();
+            ServiceDAO205 spDAO = new ServiceDAO205();
             try {
-                Service sp = spDAO.getService(Integer.parseInt(serviceid));
+                Service205 sp = spDAO.getService(Integer.parseInt(serviceid));
                 session.setAttribute("sp", sp);
             } catch (Exception ex) {
                 String err = "Có lỗi xảy ra";
@@ -77,11 +77,11 @@ public class InfomationSerAcc extends HttpServlet {
             }
            
         }else if (accessaryid != null) {
-             AccessaryDAO aDAO = new AccessaryDAO();
+             AccessaryDAO205 aDAO = new AccessaryDAO205();
             try {
                 
                
-                Accessary acc = aDAO.getAccessary(Integer.parseInt(accessaryid));
+                Accessary205 acc = aDAO.getAccessary(Integer.parseInt(accessaryid));
                 session.setAttribute("acc", acc);
                 
             } catch (Exception ex) {

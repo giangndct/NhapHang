@@ -3,7 +3,7 @@
     Created on : 30-10-2023, 22:37:48
     Author     : Admin
 --%>
-<%@page import="Entity.User"%>
+<%@page import="Entity.User205"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,8 +14,8 @@
         <title>Trang chu</title>
     </head>
     <body>
-
-        <% User u = (User) session.getAttribute("user"); %>
+        <h1>Trang Chủ</h1>
+        <% User205 u = (User205) session.getAttribute("user"); %>
         <div>Xin chào, <%= u.getName() %></div>
         <ul style="list-style-type: none;">
             <li><a 
