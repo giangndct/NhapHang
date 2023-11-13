@@ -19,7 +19,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
+
+import java.text.SimpleDateFormat;
+
+import java.util.Date;
+
 
 /**
  *
@@ -67,6 +71,8 @@ public class ImportInvoiceController extends HttpServlet {
             throws ServletException, IOException {
         String supplierid = request.getParameter("supplierid");
         String accessaryid = request.getParameter("accessaryid");
+        
+        
         HttpSession session = request.getSession();
         if (supplierid != null) {
             SupplierDAO205 spDAO = new SupplierDAO205();
@@ -119,7 +125,9 @@ public class ImportInvoiceController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         HttpSession session = request.getSession();
+
         ImportInvoice205 invoice = (ImportInvoice205) session.getAttribute("invoice");
         ImportInvoiceDAO205 pDAO = new ImportInvoiceDAO205();
         if (pDAO.addImportInvoice(invoice)) {

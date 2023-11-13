@@ -14,7 +14,17 @@
         <title>Trang chu</title>
     </head>
     <body>
-        <h1>Trang Chủ</h1>
+        <div class="row">
+            <div class="col">
+               <h1>Trang Chủ</h1> 
+            </div>
+            <div class="col">
+               <form action="login.jsp" method="post" >
+                    <button type="submit" class="btn btn-primary">Đăng xuất</button>
+                </form>
+            </div>
+        </div>
+        
         <% User205 u = (User205) session.getAttribute("user"); %>
         <div>Xin chào, <%= u.getName() %></div>
         <ul style="list-style-type: none;">

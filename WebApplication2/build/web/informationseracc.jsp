@@ -16,8 +16,8 @@
     </head>
     <body>
         <h1>Thông tin chi tiết</h1>
-        <div>
-            <div>
+        <div class="row">
+            <div class="col">
                 <c:if test="${sp!=null}">
                     <p>Thông tin Dịch vụ</p>
                     <div class="col">
@@ -30,7 +30,7 @@
             </div>
 
 
-            <div>
+            <div class="col">
                 <c:if test="${acc!=null}">
                     <p>Thông tin Phụ tùng</p>
                     <div class="col">

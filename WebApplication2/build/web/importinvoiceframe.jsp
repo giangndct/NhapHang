@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,11 +20,11 @@
         <div class="row">
             <div class="col-md-6">  <p >Hóa đơn nhập phụ tùng</p></div>
             <div class="col-md-6">
-               <form action="Homeframe.jsp" method="post" >
-                <button type="submit" class="btn btn-primary">Quay ve trang chủ</button>
-            </form>  
+                <form action="Homeframe.jsp" method="post" >
+                    <button type="submit" class="btn btn-primary">Quay ve trang chủ</button>
+                </form>  
             </div>
-             
+
         </div>
 
         <div class="row">
@@ -38,7 +39,17 @@
                 <div class="col-md-6">Tên nhân viên kho: ${sessionScope.invoice.user.name}</div>
             </div>
         </div>
-
+        <div>
+            <% 
+        // Lấy thời gian hiện tại
+        java.util.Date date = new java.util.Date();
+        
+        // Định dạng ngày giờ theo ý muốn
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd/MM/yyyy");
+        String formattedDate = sdf.format(date);
+            %>
+        </div>   
+        <div class="col-md-6" name="date">Ngày tạo: <%= formattedDate %></div>
         <a href="findacc" class="btn btn-primary">Thêm phụ tùng </a>
         <table class="table">
             <thead>

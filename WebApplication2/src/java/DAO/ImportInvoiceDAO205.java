@@ -27,6 +27,7 @@ public class ImportInvoiceDAO205 extends DAO {
         String sqlAddImportInvoice = "INSERT INTO tblimportinvoice205 (createdDate,totalMoney, tblUserId, tblSupplierId) VALUES(?,?,?,?);";
         String sqlAddImportInvoiceAccessary = "INSERT INTO tblimportinvoiceaccessary205 (amount, price, tblImportInvoice205, tblAccessary205) VALUES(?,?,?,?);";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        
         try {
             if (importInvoice.getListAccessarys().size() == 0) {
                 return false;
